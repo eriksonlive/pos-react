@@ -24,7 +24,7 @@ export const CreateSimpleinvoicePage = () => {
 
   const handleClick = () => {
     setShowColumn(!showColumn);
-  }
+  };
 
   return (
     <MainCard>
@@ -35,27 +35,26 @@ export const CreateSimpleinvoicePage = () => {
 
       <Button onClick={handleClick}>Ver Factura</Button>
 
-
       <Grid container spacing={2} sx={{ mt: 1, mb: 1 }}>
-        <Grid size={ showColumn ? 8: 12} sx={{transition: "all 0.5s ease"}}>
+        <Grid size={showColumn ? 8 : 12} sx={{ transition: 'all 0.5s ease' }}>
           <Grid container spacing={2} sx={{ mb: 2, mt: 2 }} columns={12}>
             <Grid size={6}>
               <CustomField
                 label={{
-                  title: "Codigo",
+                  title: 'Codigo',
                 }}
                 textfield={{
-                  placeholder: "Example",
+                  placeholder: 'Example',
                 }}
               />
             </Grid>
             <Grid size={6}>
               <CustomField
                 label={{
-                  title: "Buscar",
+                  title: 'Buscar',
                 }}
                 textfield={{
-                  placeholder: "Example",
+                  placeholder: 'Example',
                 }}
               />
             </Grid>
@@ -68,10 +67,12 @@ export const CreateSimpleinvoicePage = () => {
           {/* <CustomDatatable /> */}
         </Grid>
 
-        <Grid size={showColumn ? 4: 0} sx={{transition: "all 0.5s ease"}}>
-          <FacturaSimple ref={contentPrint} view
+        <Grid size={showColumn ? 4 : 0} sx={{ transition: 'all 0.5s ease' }}>
+          <FacturaSimple
+            ref={contentPrint}
+            view
             sx={{
-              transition: "opacity 0.5s ease",
+              transition: 'opacity 0.5s ease',
               opacity: showColumn ? 1 : 0,
               // height: "100vh",
             }}

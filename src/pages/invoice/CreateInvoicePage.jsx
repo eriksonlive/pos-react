@@ -18,13 +18,13 @@ import { Link as RouterLink } from 'react-router-dom';
 import { MainCard } from 'ui-component';
 
 const data = [
-  { title: "lorem 1", value: 1 },
-  { title: "lorem 2", value: 2 },
+  { title: 'lorem 1', value: 1 },
+  { title: 'lorem 2', value: 2 },
 ];
 
 export const CreateInvoicePage = () => {
   const theme = useTheme();
-  const [select, setSelect] = useState("");
+  const [select, setSelect] = useState(0);
 
   const selectClient = ({ target }) => {
     setSelect(target.value);
@@ -49,13 +49,13 @@ export const CreateInvoicePage = () => {
                 <CustomField
                   type="textfield"
                   textfield={{
-                    size: "small",
+                    size: 'small',
                     error: true,
-                    helperText: "Esto es un ejemplo del error",
+                    helperText: 'Esto es un ejemplo del error',
                   }}
                   label={{
-                    title: "Numero de factura",
-                    sx: { mb: "5px" },
+                    title: 'Numero de factura',
+                    sx: { mb: '5px' },
                   }}
                 />
               </Grid>
@@ -63,14 +63,14 @@ export const CreateInvoicePage = () => {
               <Grid
                 size={5}
                 sx={{
-                  display: "flex",
+                  display: 'flex',
                   height: 110,
                 }}
               >
                 <FormGroup sx={{ p: 0, m: 0 }}>
                   <CustomLabel
                     title="Seleccione un usuario"
-                    sx={{ mb: "5px" }}
+                    sx={{ mb: '5px' }}
                   />
                   <Select
                     size="small"
@@ -80,6 +80,7 @@ export const CreateInvoicePage = () => {
                     sx={{ width: 180, mr: 0 }}
                     error
                   >
+                    <MenuItem value={0}>Seleccione un usuario</MenuItem>
                     <MenuItem value={1}>Example 1</MenuItem>
                     <MenuItem value={2}>Example 2</MenuItem>
                     <MenuItem value={3}>Example 3</MenuItem>
@@ -90,7 +91,7 @@ export const CreateInvoicePage = () => {
 
                 <MuiLink
                   component={RouterLink}
-                  to={"#"}
+                  to={'#'}
                   variant="button"
                   underline="none"
                   sx={{
@@ -98,11 +99,11 @@ export const CreateInvoicePage = () => {
                     ...theme.typography.button,
                     background: theme.palette.secondary.light,
                     color: theme.palette.secondary.dark,
-                    p: "8px",
-                    height: "2.9em",
-                    transition: "all .2s ease-in-out",
+                    p: '8px',
+                    height: '2.9em',
+                    transition: 'all .2s ease-in-out',
                     mt: 2.9,
-                    "&:hover": {
+                    '&:hover': {
                       background: theme.palette.secondary.dark,
                       color: theme.palette.secondary.light,
                     },
@@ -114,7 +115,7 @@ export const CreateInvoicePage = () => {
             </Grid>
           </Grid>
 
-          <Grid size={12} sx={{ m: "10px 0px" }}>
+          <Grid size={12} sx={{ m: '10px 0px' }}>
             <Divider />
           </Grid>
 
@@ -127,7 +128,7 @@ export const CreateInvoicePage = () => {
                     onChange: handleChange,
                   }}
                   label={{
-                    title: "Nombre cliente *",
+                    title: 'Nombre cliente *',
                   }}
                 />
               </Grid>
@@ -138,7 +139,7 @@ export const CreateInvoicePage = () => {
                     onChange: handleChange,
                   }}
                   label={{
-                    title: "Correo Cliente",
+                    title: 'Correo Cliente',
                   }}
                 />
               </Grid>
@@ -149,7 +150,7 @@ export const CreateInvoicePage = () => {
                     onChange: handleChange,
                   }}
                   label={{
-                    title: "Celular Cliente",
+                    title: 'Celular Cliente',
                   }}
                 />
               </Grid>
@@ -160,14 +161,14 @@ export const CreateInvoicePage = () => {
                     onChange: handleChange,
                   }}
                   label={{
-                    title: "Dirección",
+                    title: 'Dirección',
                   }}
                 />
               </Grid>
             </Grid>
           </Grid>
 
-          <Grid size={12} sx={{ m: "10px 0px" }}>
+          <Grid size={12} sx={{ m: '10px 0px' }}>
             <Divider />
           </Grid>
 
@@ -177,7 +178,7 @@ export const CreateInvoicePage = () => {
                 <CustomField
                   type="date"
                   label={{
-                    title: "Fecha Factura",
+                    title: 'Fecha Factura',
                   }}
                 />
               </Grid>
@@ -190,14 +191,14 @@ export const CreateInvoicePage = () => {
                     value: select,
                   }}
                   label={{
-                    title: "Estado",
+                    title: 'Estado',
                   }}
                 />
               </Grid>
             </Grid>
           </Grid>
 
-          <Grid size={12} sx={{ m: "10px 0px" }}>
+          <Grid size={12} sx={{ m: '10px 0px' }}>
             <Divider />
           </Grid>
 
@@ -207,31 +208,31 @@ export const CreateInvoicePage = () => {
                 <CustomField
                   type="select"
                   label={{
-                    title: "Producto",
+                    title: 'Producto',
                   }}
                 />
               </Grid>
               <Grid size={4}>
                 <CustomField
                   label={{
-                    title: "Cantidad",
+                    title: 'Cantidad',
                   }}
                   textfield={{
-                    type: "number",
+                    type: 'number',
                   }}
                 />
               </Grid>
               <Grid size={4}>
                 <CustomField
                   label={{
-                    title: "Descuento",
+                    title: 'Descuento',
                   }}
                   textfield={{
-                    type: "number",
+                    type: 'number',
                   }}
                 />
               </Grid>
-              <Grid size={12} sx={{ m: "1em 0" }}>
+              <Grid size={12} sx={{ m: '1em 0' }}>
                 <Stack
                   spacing={1}
                   direction="row"
@@ -249,7 +250,7 @@ export const CreateInvoicePage = () => {
             </Grid>
           </Grid>
 
-          <Grid size={12} sx={{ m: "10px 0px" }}>
+          <Grid size={12} sx={{ m: '10px 0px' }}>
             <Divider />
           </Grid>
 
@@ -261,17 +262,17 @@ export const CreateInvoicePage = () => {
                   justifyContent="end"
                   sx={{
                     border: `1px solid ${
-                      theme.palette.mode == "dark" ? "#545b71" : "#c4c4c4"
+                      theme.palette.mode == 'dark' ? '#545b71' : '#c4c4c4'
                     } `,
                     height: 176,
-                    width: "100%",
-                    display: "flex", // Cambia a flex
-                    justifyContent: "flex-end", // Alinea a la derecha
+                    width: '100%',
+                    display: 'flex', // Cambia a flex
+                    justifyContent: 'flex-end', // Alinea a la derecha
                     p: 1,
                     borderRadius: 2,
                   }}
                 >
-                  <Box sx={{ width: "30%", display: "block", height: "100%" }}>
+                  <Box sx={{ width: '30%', display: 'block', height: '100%' }}>
                     <Grid container>
                       <Grid size={7}>
                         <Typography variant="body1" sx={{ m: 1 }}>
@@ -303,7 +304,7 @@ export const CreateInvoicePage = () => {
                           $0
                         </Typography>
                       </Grid>
-                      <Grid size={12} sx={{ m: "10px 0px" }}>
+                      <Grid size={12} sx={{ m: '10px 0px' }}>
                         <Divider />
                       </Grid>
                       <Grid size={5}>

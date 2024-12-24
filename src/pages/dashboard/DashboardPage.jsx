@@ -1,13 +1,13 @@
 import { Grid2 as Grid } from '@mui/material';
 
-import "App.css";
+import 'App.css';
 import { useEffect, useState } from 'react';
 import { gridSpacing } from 'store/constan';
 import EarningCard from './EarningCard';
 import TotalOrderLineChartCard from './TotalOrderLineChartCard';
 import TotalIncomeLightCard from './TotalIncomeLightCard';
 import TotalIncomeDarkCard from './TotalIncomeDarkCard';
-// import TotalGrowthBarChart from './TotalGrowthBarChart';
+import TotalGrowthBarChart from './TotalGrowthBarChart';
 import PopularCard from './PopularCard';
 
 export const DashboardPage = () => {
@@ -37,7 +37,7 @@ export const DashboardPage = () => {
                   {...{
                     isLoading: isLoading,
                     total: 203,
-                    label: "Total Income",
+                    label: 'Total Income',
                     // icon: <StorefrontTwoToneIcon fontSize="inherit" />
                   }}
                 />
@@ -49,7 +49,7 @@ export const DashboardPage = () => {
       <Grid size={12}>
         <Grid container spacing={gridSpacing} columns={12}>
           <Grid size={{ sx: 12, md: 8 }}>
-            {/* <TotalGrowthBarChart isLoading={isLoading} /> */}
+            <TotalGrowthBarChart isLoading={isLoading} />
           </Grid>
           <Grid size={{ sx: 12, md: 4 }}>
             <PopularCard isLoading={isLoading} />

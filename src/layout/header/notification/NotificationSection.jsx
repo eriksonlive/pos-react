@@ -16,7 +16,6 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import { IconBell } from '@tabler/icons-react';
 import { useRef, useState } from 'react';
 import { Transitions } from 'ui-component';
 import { MainCard } from 'ui-component';
@@ -27,7 +26,7 @@ import { NotificationList } from './NotificationList';
 
 export const NotificationSection = () => {
   const theme = useTheme();
-  const matchesXs = useMediaQuery(theme.breakpoints.down("md"));
+  const matchesXs = useMediaQuery(theme.breakpoints.down('md'));
 
   const [open, setOpen] = useState(false);
 
@@ -39,14 +38,14 @@ export const NotificationSection = () => {
 
   return (
     <>
-      <Box sx={{ ml: 2, mr: 3, [theme.breakpoints.down("md")]: { mr: 2 } }}>
-        <ButtonBase sx={{ borderRadius: "12px" }}>
+      <Box sx={{ ml: 2, mr: 3, [theme.breakpoints.down('md')]: { mr: 2 } }}>
+        <ButtonBase sx={{ borderRadius: '12px' }}>
           <Avatar
             variant="rounded"
             sx={{
               ...theme.typography.commonAvatar,
               ...theme.typography.mediumAvatar,
-              transition: "all .2s ease-in-out",
+              transition: 'all .2s ease-in-out',
               background: theme.palette.secondary.light,
               color: theme.palette.secondary.dark,
               '&[aria-controls="menu-list-grow"], &:hover': {
@@ -55,17 +54,17 @@ export const NotificationSection = () => {
               },
             }}
             ref={anchorRef}
-            aria-controls={open ? "menu-list-grow" : undefined}
+            aria-controls={open ? 'menu-list-grow' : undefined}
             aria-haspopup="true"
             onClick={handleToggle}
             color="inherit"
           >
-            <IconBell stroke={1.5} size="1.3rem" />
+            {/* lorem icon */}
           </Avatar>
         </ButtonBase>
       </Box>
       <Popper
-        placement={matchesXs ? "bottom" : "bottom-end"}
+        placement={matchesXs ? 'bottom' : 'bottom-end'}
         open={open}
         anchorEl={anchorRef.current}
         role={undefined}
@@ -73,7 +72,7 @@ export const NotificationSection = () => {
         disablePortal
         modifiers={[
           {
-            name: "offset",
+            name: 'offset',
             options: {
               offset: [matchesXs ? 5 : 0, 20],
             },
@@ -82,7 +81,7 @@ export const NotificationSection = () => {
       >
         {({ TransitionProps }) => (
           <Transitions
-            position={matchesXs ? "top" : "top-right"}
+            position={matchesXs ? 'top' : 'top-right'}
             in={open}
             {...TransitionProps}
           >
@@ -134,9 +133,9 @@ export const NotificationSection = () => {
                       <PerfectScrollbar
                         component="div"
                         style={{
-                          height: "100%",
-                          maxHeight: "calc(100vh - 205px)",
-                          overflowX: "hidden",
+                          height: '100%',
+                          maxHeight: 'calc(100vh - 205px)',
+                          overflowX: 'hidden',
                         }}
                       >
                         <Grid container direction="column" spacing={2}>
@@ -146,7 +145,7 @@ export const NotificationSection = () => {
                                 id="outlined-select-currency-native"
                                 select
                                 fullWidth
-                                value={""}
+                                value={''}
                                 onChange={() => {}}
                                 SelectProps={{
                                   native: true,
@@ -170,7 +169,7 @@ export const NotificationSection = () => {
                     </Grid>
                   </Grid>
                   <Divider />
-                  <CardActions sx={{ p: 1.25, justifyContent: "center" }}>
+                  <CardActions sx={{ p: 1.25, justifyContent: 'center' }}>
                     <Button size="small" disableElevation>
                       View All
                     </Button>

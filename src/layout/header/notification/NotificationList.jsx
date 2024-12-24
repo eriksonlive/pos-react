@@ -16,18 +16,17 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
-import { IconBrandTelegram, IconBuildingStore, IconMailbox, IconPhoto } from '@tabler/icons-react';
 
 const ListItemWrapper = ({ children }) => {
   return (
     <Box
       sx={{
         p: 2,
-        BorderBottom: "1px solid",
-        borderColor: "divider",
-        cursor: "pointer",
-        "&:hover": {
-          bgcolor: "primary.light",
+        BorderBottom: '1px solid',
+        borderColor: 'divider',
+        cursor: 'pointer',
+        '&:hover': {
+          bgcolor: 'primary.light',
         },
       }}
     >
@@ -37,22 +36,22 @@ const ListItemWrapper = ({ children }) => {
 };
 
 ListItemWrapper.propTypes = {
-    children: PropTypes.node
-}
+  children: PropTypes.node,
+};
 
 export const NotificationList = () => {
   const theme = useTheme();
 
   const chipSX = {
     height: 24,
-    padding: "0.6px",
+    padding: '0.6px',
   };
 
   const chipErrorSX = {
     ...chipSX,
     color: theme.palette.orange.dark,
     backgroundColor: theme.palette.orange.light,
-    marginRigth: "5px",
+    marginRigth: '5px',
   };
 
   const chipWarningSX = {
@@ -71,20 +70,20 @@ export const NotificationList = () => {
   return (
     <List
       sx={{
-        width: "100%",
+        width: '100%',
         maxWidth: 330,
         py: 0,
-        borderRadius: "10px",
-        [theme.breakpoints.down("md")]: {
+        borderRadius: '10px',
+        [theme.breakpoints.down('md')]: {
           maxWidth: 300,
         },
-        "& .MuiListItemSecondaryAction-root": {
+        '& .MuiListItemSecondaryAction-root': {
           top: 22,
         },
-        "& .MuiDivider-root": {
+        '& .MuiDivider-root': {
           my: 0,
         },
-        "& .list-container": {
+        '& .list-container': {
           pl: 7,
         },
       }}
@@ -123,7 +122,7 @@ export const NotificationList = () => {
           </Grid>
         </Grid>
       </ListItemWrapper>
-      
+
       <Divider />
       <ListItemWrapper>
         <ListItem alignItems="center">
@@ -133,13 +132,19 @@ export const NotificationList = () => {
                 color: theme.palette.success.dark,
                 backgroundColor: theme.palette.success.light,
                 border: 'none',
-                borderColor: theme.palette.success.main
+                borderColor: theme.palette.success.main,
               }}
             >
-              <IconBuildingStore stroke={1.5} size="1.3rem" />
+              {/* lore icon */}
             </Avatar>
           </ListItemAvatar>
-          <ListItemText primary={<Typography variant="subtitle1">Store Verification Done</Typography>} />
+          <ListItemText
+            primary={
+              <Typography variant="subtitle1">
+                Store Verification Done
+              </Typography>
+            }
+          />
           <Box sx={{ position: 'absolute', right: 16 }}>
             <Grid container justifyContent="flex-end">
               <Grid size={12}>
@@ -152,7 +157,9 @@ export const NotificationList = () => {
         </ListItem>
         <Grid container direction="column" className="list-container">
           <Grid size={12} sx={{ pb: 2 }}>
-            <Typography variant="subtitle2">We have successfully received your request.</Typography>
+            <Typography variant="subtitle2">
+              We have successfully received your request.
+            </Typography>
           </Grid>
           <Grid size={12}>
             <Grid container>
@@ -163,7 +170,7 @@ export const NotificationList = () => {
           </Grid>
         </Grid>
       </ListItemWrapper>
-      
+
       <Divider />
       <ListItemWrapper>
         <ListItem alignItems="center">
@@ -173,13 +180,17 @@ export const NotificationList = () => {
                 color: theme.palette.primary.dark,
                 backgroundColor: theme.palette.primary.light,
                 border: 'none',
-                borderColor: theme.palette.primary.main
+                borderColor: theme.palette.primary.main,
               }}
             >
-              <IconMailbox stroke={1.5} size="1.3rem" />
+              {/* lorem icon */}
             </Avatar>
           </ListItemAvatar>
-          <ListItemText primary={<Typography variant="subtitle1">Check Your Mail.</Typography>} />
+          <ListItemText
+            primary={
+              <Typography variant="subtitle1">Check Your Mail.</Typography>
+            }
+          />
           <Box sx={{ position: 'absolute', right: 16 }}>
             <Grid container justifyContent="flex-end">
               <Grid>
@@ -192,12 +203,16 @@ export const NotificationList = () => {
         </ListItem>
         <Grid container direction="column" className="list-container">
           <Grid size={12} sx={{ pb: 2 }}>
-            <Typography variant="subtitle2">All done! Now check your inbox as you&apos;re in for a sweet treat!</Typography>
+            <Typography variant="subtitle2">
+              All done! Now check your inbox as you&apos;re in for a sweet
+              treat!
+            </Typography>
           </Grid>
           <Grid size={12}>
             <Grid container>
               <Grid>
-                <Button variant="contained" disableElevation endIcon={<IconBrandTelegram stroke={1.5} size="1.3rem" />}>
+                {/* lore icon */}
+                <Button variant="contained" disableElevation endIcon={'icono'}>
                   Mail
                 </Button>
               </Grid>
@@ -212,7 +227,9 @@ export const NotificationList = () => {
           <ListItemAvatar>
             <Avatar alt="John Doe" src={null} />
           </ListItemAvatar>
-          <ListItemText primary={<Typography variant="subtitle1">John Doe</Typography>} />
+          <ListItemText
+            primary={<Typography variant="subtitle1">John Doe</Typography>}
+          />
           <Box sx={{ position: 'absolute', right: 16 }}>
             <Grid container justifyContent="flex-end">
               <Grid size={12}>
@@ -237,14 +254,14 @@ export const NotificationList = () => {
               <Grid size={12}>
                 <Card
                   sx={{
-                    backgroundColor: theme.palette.secondary.light
+                    backgroundColor: theme.palette.secondary.light,
                   }}
                 >
                   <CardContent>
                     <Grid container direction="column">
                       <Grid size={12}>
                         <Stack direction="row" spacing={2}>
-                          <IconPhoto stroke={1.5} size="1.3rem" />
+                          {/* lorem icon */}
                           <Typography variant="subtitle1">demo.jpg</Typography>
                         </Stack>
                       </Grid>
@@ -263,7 +280,9 @@ export const NotificationList = () => {
           <ListItemAvatar>
             <Avatar alt="John Doe" src={null} />
           </ListItemAvatar>
-          <ListItemText primary={<Typography variant="subtitle1">John Doe</Typography>} />
+          <ListItemText
+            primary={<Typography variant="subtitle1">John Doe</Typography>}
+          />
           <Box sx={{ position: 'absolute', right: 16 }}>
             <Grid container justifyContent="flex-end">
               <Grid size={12}>
@@ -276,7 +295,9 @@ export const NotificationList = () => {
         </ListItem>
         <Grid container direction="column" className="list-container">
           <Grid size={12} sx={{ pb: 2 }}>
-            <Typography variant="subtitle2">It is a long established fact that a reader will be distracted</Typography>
+            <Typography variant="subtitle2">
+              It is a long established fact that a reader will be distracted
+            </Typography>
           </Grid>
           <Grid size={12}>
             <Grid container>

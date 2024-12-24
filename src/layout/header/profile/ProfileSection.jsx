@@ -20,10 +20,14 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
-import { IconLogout, IconSearch, IconSettings, IconUser } from '@tabler/icons-react';
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { MainCard, Transitions } from 'ui-component';
+
+import { BsGearFill } from 'react-icons/bs';
+import { IoSearchOutline, IoLogOutOutline } from 'react-icons/io5';
+import { CgProfile } from 'react-icons/cg';
+import { LuSettings2 } from 'react-icons/lu';
 
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { useSelector } from 'react-redux';
@@ -35,7 +39,7 @@ export const ProfileSection = () => {
   const customization = { borderRadius: 5 };
 
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
   const [sdm, setSdm] = useState(true);
   const [notification, setNotification] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -53,11 +57,11 @@ export const ProfileSection = () => {
     setOpen(!open);
   };
 
-  const handleListItemClick = (event, index, route = "") => {
+  const handleListItemClick = (event, index, route = '') => {
     setSelectedIndex(index);
     handleClose(event);
 
-    if (route && route !== "") {
+    if (route && route !== '') {
       navigate(route);
     }
   };
@@ -66,21 +70,21 @@ export const ProfileSection = () => {
     <>
       <Chip
         sx={{
-          height: "48px",
-          alignItems: "center",
-          borderRadius: "27px",
-          transition: "all .2s ease-in-out",
+          height: '48px',
+          alignItems: 'center',
+          borderRadius: '27px',
+          transition: 'all .2s ease-in-out',
           borderColor: theme.palette.primary.light,
           backgroundColor: theme.palette.primary.light,
           '&[aria-controls="menu-list-grow"], &:hover': {
             borderColor: theme.palette.primary.main,
             background: `${theme.palette.primary.main} !important`,
             color: theme.palette.primary.light,
-            "& svg": {
+            '& svg': {
               stroke: theme.palette.primary.light,
             },
           },
-          "& .MuiChip-label": {
+          '& .MuiChip-label': {
             lineHeight: 0,
           },
         }}
@@ -89,25 +93,20 @@ export const ProfileSection = () => {
             // src={null}
             sx={{
               ...theme.typography.mediumAvatar,
-              margin: "8px 0 8px 8px !important",
-              cursor: "pointer",
+              margin: '8px 0 8px 8px !important',
+              cursor: 'pointer',
             }}
             ref={anchorRef}
-            aria-controls={open ? "menu-list-grow" : undefined}
+            aria-controls={open ? 'menu-list-grow' : undefined}
             aria-haspopup="true"
             color="inherit"
           />
         }
-        label={
-          <IconSettings
-            stroke={1.5}
-            size="1.5rem"
-            color={theme.palette.primary.main}
-          />
-        }
+        // lorem icon
+        label={<BsGearFill size="25" />}
         variant="outlined"
         ref={anchorRef}
-        aria-controls={open ? "menu-list-grow" : undefined}
+        aria-controls={open ? 'menu-list-grow' : undefined}
         aria-haspopup="true"
         onClick={handleToggle}
         color="primary"
@@ -121,7 +120,7 @@ export const ProfileSection = () => {
         disablePortal
         modifiers={[
           {
-            name: "offset",
+            name: 'offset',
             options: {
               offset: [0, 14],
             },
@@ -154,32 +153,28 @@ export const ProfileSection = () => {
                       <Typography variant="subtitle2">Project Admin</Typography>
                     </Stack>
                     <OutlinedInput
-                      sx={{ width: "100%", pr: 1, pl: 2, my: 2 }}
+                      sx={{ width: '100%', pr: 1, pl: 2, my: 2 }}
                       id="input-search-profile"
                       value={value}
                       onChange={({ target }) => setValue(target.value)}
                       placeholder="Search profile options"
                       startAdornment={
                         <InputAdornment position="start">
-                          <IconSearch
-                            stroke={1.5}
-                            size="1rem"
-                            color={theme.palette.grey[500]}
-                          />
+                          <IoSearchOutline size="1.3rem" />
                         </InputAdornment>
                       }
                       aria-describedby="search-helper-text"
                       inputProps={{
-                        "aria-label": "weigth",
+                        'aria-label': 'weigth',
                       }}
                     />
                     <Divider />
                   </Box>
                   <PerfectScrollbar
                     style={{
-                      height: "100%",
-                      maxHeight: "calc(100hv - 250px)",
-                      overflow: "hidden",
+                      height: '100%',
+                      maxHeight: 'calc(100hv - 250px)',
+                      overflow: 'hidden',
                     }}
                   >
                     <Box sx={{ p: 2, pt: 0 }}>
@@ -243,15 +238,15 @@ export const ProfileSection = () => {
                       <List
                         component="nav"
                         sx={{
-                          width: "100%",
+                          width: '100%',
                           maxWidth: 350,
                           minWidth: 300,
                           backgroundColor: theme.palette.background.paper,
-                          borderRadius: "10px",
-                          [theme.breakpoints.down("md")]: {
-                            minWidth: "100%",
+                          borderRadius: '10px',
+                          [theme.breakpoints.down('md')]: {
+                            minWidth: '100%',
                           },
-                          "& .MuiListItemButton-root": {
+                          '& .MuiListItemButton-root': {
                             mt: 0.5,
                           },
                         }}
@@ -262,11 +257,11 @@ export const ProfileSection = () => {
                           }}
                           selected={selectedIndex === 0}
                           onClick={(event) =>
-                            handleListItemClick(event, 0, "#")
+                            handleListItemClick(event, 0, '#')
                           }
                         >
                           <ListItemIcon>
-                            <IconSettings stroke={1.5} size="1.3rem" />
+                            <LuSettings2 size="1.3rem" />
                           </ListItemIcon>
                           <ListItemText
                             primary={
@@ -282,11 +277,11 @@ export const ProfileSection = () => {
                           }}
                           selected={selectedIndex === 0}
                           onClick={(event) =>
-                            handleListItemClick(event, 1, "#")
+                            handleListItemClick(event, 1, '#')
                           }
                         >
                           <ListItemIcon>
-                            <IconUser stroke={1.5} size="1.3rem" />
+                            {<CgProfile size="1.3rem" />}
                           </ListItemIcon>
                           <ListItemText
                             primary={
@@ -320,17 +315,15 @@ export const ProfileSection = () => {
                           }}
                           selected={selectedIndex === 0}
                           onClick={(event) =>
-                            handleListItemClick(event, 0, "/login")
+                            handleListItemClick(event, 0, '/login')
                           }
                         >
                           <ListItemIcon>
-                            <IconLogout stroke={1.5} size="1.3rem" />
+                            {<IoLogOutOutline size="1.3rem" />}
                           </ListItemIcon>
                           <ListItemText
                             primary={
-                              <Typography variant="body2">
-                                Logout
-                              </Typography>
+                              <Typography variant="body2">Logout</Typography>
                             }
                           />
                         </ListItemButton>

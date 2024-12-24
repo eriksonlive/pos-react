@@ -1,11 +1,12 @@
-// assets
-import { IconKey, IconAsset, IconAssembly } from '@tabler/icons-react';
+import { IoKeyOutline } from 'react-icons/io5';
+import { SlLogin } from 'react-icons/sl';
+import { FaRegRegistered } from 'react-icons/fa';
 
 // constant
 const icons = {
-  IconKey,
-  IconAsset,
-  IconAssembly
+  IoKeyOutline,
+  SlLogin,
+  FaRegRegistered,
 };
 
 // ==============================|| EXTRA PAGES MENU ITEMS ||============================== //
@@ -20,7 +21,7 @@ export const pages = {
       id: 'authentication',
       title: 'Authentication',
       type: 'collapse',
-      icon: icons.IconKey,
+      icon: icons.IoKeyOutline,
 
       children: [
         {
@@ -29,7 +30,7 @@ export const pages = {
           type: 'item',
           url: '/login',
           // target: true,
-          icon: icons.IconAsset,
+          icon: icons.SlLogin,
         },
         {
           id: 'register3',
@@ -37,9 +38,9 @@ export const pages = {
           type: 'item',
           url: '/register',
           // target: true,
-          icon: icons.IconAssembly
-        }
-      ]
-    }
-  ]
+          icon: icons.FaRegRegistered,
+        },
+      ],
+    },
+  ],
 };

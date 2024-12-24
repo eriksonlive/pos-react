@@ -10,22 +10,23 @@ import PopupState, { bindPopper, bindToggle } from 'material-ui-popup-state';
 import { useState } from 'react';
 import { HeaderAvatar } from './HeaderAvatar';
 
+import { IoSearchOutline } from 'react-icons/io5';
+
 import { Transitions } from 'ui-component';
-import { IconAdjustmentsHorizontal, IconSearch } from '@tabler/icons-react';
 import { MobileSearch } from './MobileSearch';
 
 export const SearchSection = () => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
 
   return (
     <>
-      <Box sx={{ display: { xs: "block", md: "none" } }}>
+      <Box sx={{ display: { xs: 'block', md: 'none' } }}>
         <PopupState variant="popper" popupId="demo-popup-popper">
           {(popupState) => (
             <>
               <Box sx={{ ml: 2 }}>
                 <HeaderAvatar {...bindToggle(popupState)}>
-                  <IconSearch stroke={1.5} size="19.2px" />
+                  <IoSearchOutline size="1.3rem" />
                 </HeaderAvatar>
               </Box>
               <Popper
@@ -33,8 +34,8 @@ export const SearchSection = () => {
                 transition
                 sx={{
                   zIndex: 1100,
-                  width: "99%",
-                  top: "-55px !important",
+                  width: '99%',
+                  top: '-55px !important',
                   px: { xs: 1.25, sm: 1.5 },
                 }}
               >
@@ -43,13 +44,13 @@ export const SearchSection = () => {
                     <Transitions
                       type="zoom"
                       {...TransitionProps}
-                      sx={{ transformOrigin: "center left" }}
+                      sx={{ transformOrigin: 'center left' }}
                     >
                       <Card
                         sx={{
-                          bgcolor: "background.default",
+                          bgcolor: 'background.default',
                           border: 0,
-                          boxShadow: "none",
+                          boxShadow: 'none',
                         }}
                       >
                         <Box sx={{ p: 2 }}>
@@ -76,7 +77,7 @@ export const SearchSection = () => {
           )}
         </PopupState>
       </Box>
-      <Box sx={{ display: { xs: "none", md: "block" } }}>
+      <Box sx={{ display: { xs: 'none', md: 'block' } }}>
         <OutlinedInput
           id="input-search-header"
           value={value}
@@ -84,20 +85,20 @@ export const SearchSection = () => {
           placeholder="Buscar"
           startAdornment={
             <InputAdornment position="start">
-              <IconSearch stroke={1.5} size="16px" />
+              <IoSearchOutline size="1.3rem" />
             </InputAdornment>
           }
           endAdornment={
             <InputAdornment position="end">
-              {/* <HeaderAvatar>
-                <IconAdjustmentsHorizontal stroke={1.5} size="20px" />
-              </HeaderAvatar> */}
+              <HeaderAvatar>
+                {/* <IconAdjustmentsHorizontal stroke={1.5} size="20px" /> */}
+              </HeaderAvatar>
             </InputAdornment>
           }
           aria-describedby="search-helper-text"
           inputProps={{
-            "aria-label": "weigth",
-            sx: { bgcolor: "transparent", pl: 0.5 },
+            'aria-label': 'weigth',
+            sx: { bgcolor: 'transparent', pl: 0.5 },
           }}
           sx={{ width: { md: 250, lg: 434 }, ml: 2, px: 2 }}
         />

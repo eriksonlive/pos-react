@@ -13,12 +13,12 @@ import Radio from '@mui/material/Radio';
 import Slider from '@mui/material/Slider';
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import { BsGear } from 'react-icons/bs';
 
 import PerfectScrollbar from 'react-perfect-scrollbar';
 
 // import { SET_BORDER_RADIUS, SET_FONT_FAMILY } from '../../store/actions';
 
-import { IconSettings } from '@tabler/icons-react';
 import { AnimateButton, SubCard } from 'ui-component';
 import { gridSpacing } from 'store/constan';
 
@@ -34,10 +34,10 @@ export const Customization = () => {
   //   const customization = useSelector((state) => state.customization);
 
   // drawer on/off
-  //   const [open, setOpen] = useState(false);
-  //   const handleToggle = () => {
-  //     setOpen(!open);
-  //   };
+  const [open, setOpen] = useState(false);
+  const handleToggle = () => {
+    setOpen(!open);
+  };
 
   // state - border radius
   //   const [borderRadius, setBorderRadius] = useState(customization.borderRadius);
@@ -88,25 +88,25 @@ export const Customization = () => {
       <Tooltip title="Live Customize">
         <Fab
           component="div"
-          //   onClick={handleToggle}
+          onClick={handleToggle}
           size="medium"
           variant="circular"
           color="secondary"
           sx={{
             borderRadius: 0,
-            borderTopLeftRadius: "50%",
-            borderBottomLeftRadius: "50%",
-            borderTopRightRadius: "50%",
-            borderBottomRightRadius: "4px",
-            top: "25%",
-            position: "fixed",
+            borderTopLeftRadius: '50%',
+            borderBottomLeftRadius: '50%',
+            borderTopRightRadius: '50%',
+            borderBottomRightRadius: '4px',
+            top: '25%',
+            position: 'fixed',
             right: 10,
             zIndex: theme.zIndex.speedDial,
           }}
         >
           <AnimateButton type="rotate">
             <IconButton color="inherit" size="large" disableRipple>
-              <IconSettings />
+              <BsGear />
             </IconButton>
           </AnimateButton>
         </Fab>
@@ -114,8 +114,8 @@ export const Customization = () => {
 
       <Drawer
         anchor="right"
-        // onClose={handleToggle}
-        // open={open}
+        onClose={handleToggle}
+        open={open}
         PaperProps={{
           sx: {
             width: 280,
@@ -139,8 +139,8 @@ export const Customization = () => {
                       control={<Radio />}
                       label="Roboto"
                       sx={{
-                        "& .MuiSvgIcon-root": { fontSize: 28 },
-                        "& .MuiFormControlLabel-label": {
+                        '& .MuiSvgIcon-root': { fontSize: 28 },
+                        '& .MuiFormControlLabel-label': {
                           color: theme.palette.grey[900],
                         },
                       }}
@@ -150,8 +150,8 @@ export const Customization = () => {
                       control={<Radio />}
                       label="Poppins"
                       sx={{
-                        "& .MuiSvgIcon-root": { fontSize: 28 },
-                        "& .MuiFormControlLabel-label": {
+                        '& .MuiSvgIcon-root': { fontSize: 28 },
+                        '& .MuiFormControlLabel-label': {
                           color: theme.palette.grey[900],
                         },
                       }}
@@ -161,8 +161,8 @@ export const Customization = () => {
                       control={<Radio />}
                       label="Inter"
                       sx={{
-                        "& .MuiSvgIcon-root": { fontSize: 28 },
-                        "& .MuiFormControlLabel-label": {
+                        '& .MuiSvgIcon-root': { fontSize: 28 },
+                        '& .MuiFormControlLabel-label': {
                           color: theme.palette.grey[900],
                         },
                       }}
@@ -200,8 +200,8 @@ export const Customization = () => {
                       max={24}
                       color="secondary"
                       sx={{
-                        "& .MuiSlider-valueLabel": {
-                          color: "secondary.light",
+                        '& .MuiSlider-valueLabel': {
+                          color: 'secondary.light',
                         },
                       }}
                     />

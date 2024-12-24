@@ -21,16 +21,16 @@ const BajajAreaChartCard = () => {
   const orangeDark = theme.palette.secondary[800];
 
   const customization = useSelector((state) => state.customization);
-  const { navType } = customization;
+  // const { navType } = customization;
 
   React.useEffect(() => {
     const newSupportChart = {
       ...chartData.options,
       colors: [orangeDark],
-      tooltip: { theme: 'light' }
+      tooltip: { theme: 'light' },
     };
     ApexCharts.exec(`support-chart`, 'updateOptions', newSupportChart);
-  }, [navType, orangeDark]);
+  }, [orangeDark]);
 
   return (
     <Card sx={{ bgcolor: 'secondary.light' }}>
