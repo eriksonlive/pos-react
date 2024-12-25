@@ -1,27 +1,24 @@
-import {
-  FormGroup,
-  TextareaAutosize,
-  TextField,
-} from '@mui/material';
+import { FormGroup, TextareaAutosize, TextField } from '@mui/material';
 import { CustomFieldSelect, CustomLabel, CustomOutlinedInput } from '.';
 import { DatePicker } from '@mui/x-date-pickers';
+import moment from 'moment';
 // import { CustomTextField } from './CustomTextField';
 
 export const CustomField = ({ type, ...props }) => {
   const { label, textfield, select, textarea, date } = props;
 
   const defaultSx = {
-    mb: "5px",
+    mb: '5px',
   };
 
   const defaultDate = {
-    "& .MuiInputBase-input": {
-      p: "10px",
+    '& .MuiInputBase-input': {
+      p: '10px',
     },
   };
 
   switch (type) {
-    case "select":
+    case 'select':
       return (
         <FormGroup>
           {label && (
@@ -33,7 +30,7 @@ export const CustomField = ({ type, ...props }) => {
           <CustomFieldSelect size="small" {...select} />
         </FormGroup>
       );
-    case "textarea":
+    case 'textarea':
       return (
         <FormGroup>
           {label && (
@@ -46,7 +43,7 @@ export const CustomField = ({ type, ...props }) => {
         </FormGroup>
       );
 
-    case "date":
+    case 'date':
       return (
         <FormGroup>
           {label && (
@@ -55,15 +52,25 @@ export const CustomField = ({ type, ...props }) => {
               title={label?.title}
             />
           )}
-          <DatePicker size="small" sx={{ ...defaultDate, ...date?.sx }} />
+          <DatePicker
+            // selected={moment(date.value, date.format ?? 'MM/DD/YYYY').toDate()}
+            onChange={(value) =>
+              date.onChange(moment(value).format(date.format ?? 'DD/MM/YYYY'))
+            }
+            defaultValue={moment(date.value, date.format ?? 'MM/DD/YYYY')}
+            size="small"
+            dateFormat={date.format ?? 'DD/MM/YYYY'}
+            placeholderText="Selecciona una fecha"
+            // style={{ width: '100%', padding: '10px', borderRadius: '4px' }}
+          />
         </FormGroup>
       );
-    case "auth":
+    case 'auth':
       return (
-        <CustomOutlinedInput {...textfield}/>
+        <CustomOutlinedInput {...textfield} />
         // <CustomTextField label={label} error={textfield.error} {...textfield}/>
         // <FormGroup sx={{mb: 1}}>
-        //   <Box 
+        //   <Box
         //     sx={{
         //       width: "100%",
         //       border: `1px solid ${textfield?.error ? 'red': ''}`,
@@ -96,7 +103,7 @@ export const CustomField = ({ type, ...props }) => {
         //   {
         //     textfield?.error && (
         //       <Typography variant="subtitle2" color={'red'} sx={{ml: 1}} >error en el correo electronico</Typography>
-        //     ) 
+        //     )
         //   }
         // </FormGroup>
       );

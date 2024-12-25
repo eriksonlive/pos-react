@@ -8,7 +8,7 @@ const items = [
   { value: 5, title: 'Example 5' },
 ];
 
-export const CustomFieldSelect = ({ value = 0, ...props }) => {
+export const CustomFieldSelect = ({ value = '', ...props }) => {
   const { sx, onChange, data } = {
     sx: props?.sxSelect,
     onChange: props?.onChange,
@@ -16,10 +16,12 @@ export const CustomFieldSelect = ({ value = 0, ...props }) => {
   };
 
   return (
-    <Select value={value} sx={sx} onChange={onChange} {...props}>
-      <MenuItem value={0}>Seleccione una opción</MenuItem>
+    <Select value={value} sx={sx} onChange={onChange} {...props} displayEmpty>
+      <MenuItem value="" disabled={value === ''}>
+        Seleccione una opción
+      </MenuItem>
       {data.map((item) => (
-        <MenuItem key={item.value} value={item?.value}>
+        <MenuItem key={item?.value} value={item?.value}>
           {item?.title}
         </MenuItem>
       ))}

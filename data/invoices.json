@@ -1,0 +1,52 @@
+[
+    {
+      "id": 1,
+      "fac": "FAC-001",
+      "date": "2021-01-01",
+      "customer": {
+        "id": 1,
+        "name": "John Doe",
+        "email": "",
+        "phone": "",
+        "address": ""
+      },
+      "items": [
+        {
+          "id": 1,
+          "name": "Product 1",
+          "price": 100,
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "name": "Product 2",
+          "price": 200,
+          "quantity": 2
+        }
+      ],
+      "discount": 0,
+      "status": "paid"
+    },
+    {
+      "id": 2,
+      "fac": "FAC-002",
+      "date": "2024-12-25T05:59:39.104Z",
+      "customer": {
+        "id": 2,
+        "name": "Erick",
+        "email": "admin@example.com",
+        "phone": "12345678",
+        "address": "cra 123 # 44"
+      },
+      "items": [
+        {
+          "id": 3,
+          "name": "Product 1",
+          "price": 150,
+          "quantity": 2
+        }
+      ],
+      "discount": 5000,
+      "status": "in proccess"
+    }
+]
